@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{2C6A8AEE-397E-6593-3B02-5FEF2927DC96}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/02. Scripts/enemy/EnermyAI.cs">
+    <Files>
+      <File FileName="Assets/02. Scripts/enemy/Spawner.cs" Line="18" Column="24" />
+      <File FileName="Assets/02. Scripts/enemy/EnemyDefaultMove.cs" Line="5" Column="30" />
+      <File FileName="Assets/02. Scripts/Player.cs" Line="23" Column="54" />
+      <File FileName="Assets/02. Scripts/enemy/EnermyAI.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
