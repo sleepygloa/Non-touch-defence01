@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\02. Scripts\ArcherScript.cs" />
+    <Compile Include="Assets\02. Scripts\CameraManager.cs" />
     <Compile Include="Assets\02. Scripts\CharacterAttributeScript.cs" />
     <Compile Include="Assets\02. Scripts\EmenyScript.cs" />
     <Compile Include="Assets\02. Scripts\EnemyMoveScript.cs" />

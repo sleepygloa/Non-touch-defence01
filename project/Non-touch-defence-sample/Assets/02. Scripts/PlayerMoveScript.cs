@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMoveScript : CharacterAttributeScript
 {
@@ -66,6 +67,8 @@ public class PlayerMoveScript : CharacterAttributeScript
     private float endDieTime = 0f;
     private float statusDieTime = 3f;
 
+    public Image imgHp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +87,11 @@ public class PlayerMoveScript : CharacterAttributeScript
     // Update is called once per frame
     void Update()
     {
+
+        if(imgHp != null) {
+            float playerHp = hp;
+            imgHp.fillAmount = hp / maxHp;
+        }
 
 
         //2-7. 캐릭터가 죽고있다면 
@@ -146,7 +154,7 @@ public class PlayerMoveScript : CharacterAttributeScript
                 if (dist < findEnemyRange)
                 {
                     //발견
-                    Debug.Log("find enemy");
+                    //Debug.Log("find enemy");
 
                     //절 발견 플래그 변경
                     targetFlag = true;
@@ -156,120 +164,130 @@ public class PlayerMoveScript : CharacterAttributeScript
                 }
                 else
                 {
-                    Debug.Log("no enemy");
+                    //Debug.Log("no enemy");
                     fnCharacterStatusInit();
-                }
-            }
-        }
-
-        //1. 적을 찾았을 때 
-        if (targetFlag) {
-            //적의 상태창 조회
-            enemyStatus = targetEnemy.GetComponent<CharacterAttributeScript>();
-
-            //적을 찾은 시간
-            endFindTime += Time.deltaTime;
-
-            //1-1. 적이 죽었는지 파악, 죽었다면 처음부터(루프 종료) 
-            if (enemyStatus.isDie)
-            {
-                Debug.Log("die");
-                fnFindEnemyInit();
-                return;
-            }
-
-            //1-2. 적의 피가 0 이면 적을 다시 찾아야함 
-            if(enemyStatus.hp <= 0) {
-                Debug.Log("0");
-                fnFindEnemyInit();
-                return;
-            }
-
-            //1-3. 적이 살아있다 !
-            //1-3-3. 스킬2 을 배웠다면, 스킬이 쿨다운 상태인지 확인
-            //배웠는지 확인
-            if (learnSkiil2) {
-                //스킬 사용 중 아닐 때 
-                if (!isSkill2)
-                {
-                    isSkill2 = true; //스킬사용상태로 변경
-                    animator.SetBool("isSkill2", true); //스킬사용 애니메이션 변경
-                }
-
-                //스킬 사용 중 일 때
-                if (isSkill2)
-                {
-                    endSkill2Time += Time.deltaTime; //스킬 사용 시간 체크
-                    if (endSkill2Time - startSkill2Time > skill2CoolTime)
-                    {
-                        //스킬발동 
-
-                        endSkill2Time = 0f;
-                    }
-                    if (endSkill2Time - startSkill2Time > skill2AfterDelay)
-                    {
-                        animator.SetBool("isStand", true);
-                    }
                     return;
                 }
             }
+        }else  {
 
+            if(targetEnemy != null) {
+                //적의 상태창 조회
+                enemyStatus = targetEnemy.GetComponent<CharacterAttributeScript>();
 
+                //적을 찾은 시간
+                endFindTime += Time.deltaTime;
 
-            //1-3-3. 스킬1 을 배웠다면, 스킬이 쿨다운 상태인지 확인
-            if (learnSkill1) {
-                if (!isSkill1)
+                //1-1. 적이 죽었는지 파악, 죽었다면 처음부터(루프 종료) 
+                if (enemyStatus.isDie)
                 {
-                    isSkill1 = true;
-                    animator.SetBool("isSkill1", true);
-                }
-
-
-                if (isSkill1)
-                {
-                    endSkill1Time += Time.deltaTime;
-                    if (endSkill1Time - startSkill1Time > skill1CoolTime)
-                    {
-                        //스킬발동 
-
-                        endSkill1Time = 0f;
-                    }
-                    if (endSkill1Time - startSkill1Time > skill1AfterDelay)
-                    {
-                        animator.SetBool("isStand", true);
-                    }
-                    return;
-                }
-            }
-
-
-            //1-3-1. 캐릭터가 공격중이 아니라면 공격 시작
-            if (!isAttack) {
-                isAttack = true;
-                animator.SetBool("isAttack", true);
-            }
-
-            //1-3-2. 캐릭터가 공격 중 
-            if (isAttack) {
-
-                endAttackTime += Time.deltaTime;
-
-                if(endAttackTime - startAttackTime < attackCoolTime) {
+                    Debug.Log("die");
+                    fnFindEnemyInit();
                     return;
                 }
 
-                //피사체 유무
-                //피사체 유 : 피사체를 날리고 공격대상을 넘겨준다.
-                if (isProtectileFlag)
+                //1-2. 적의 피가 0 이면 적을 다시 찾아야함 
+                if (enemyStatus.hp <= 0)
                 {
-                    enemyStatus.setDamage(this.attack);
+                    Debug.Log("0");
+                    fnFindEnemyInit();
+                    return;
                 }
-                //피사체 무 : 바로 공격한다.
-                else
+
+                //1-3. 적이 살아있다 !
+                //1-3-3. 스킬2 을 배웠다면, 스킬이 쿨다운 상태인지 확인
+                //배웠는지 확인
+                if (learnSkiil2)
                 {
-                    enemyStatus.setDamage(this.attack);
+                    //스킬 사용 중 아닐 때 
+                    if (!isSkill2)
+                    {
+                        isSkill2 = true; //스킬사용상태로 변경
+                        animator.SetBool("isSkill2", true); //스킬사용 애니메이션 변경
+                    }
+
+                    //스킬 사용 중 일 때
+                    if (isSkill2)
+                    {
+                        endSkill2Time += Time.deltaTime; //스킬 사용 시간 체크
+                        if (endSkill2Time - startSkill2Time > skill2CoolTime)
+                        {
+                            //스킬발동 
+
+                            endSkill2Time = 0f;
+                        }
+                        if (endSkill2Time - startSkill2Time > skill2AfterDelay)
+                        {
+                            animator.SetBool("isStand", true);
+                        }
+                        return;
+                    }
                 }
+
+
+
+                //1-3-3. 스킬1 을 배웠다면, 스킬이 쿨다운 상태인지 확인
+                if (learnSkill1)
+                {
+                    if (!isSkill1)
+                    {
+                        isSkill1 = true;
+                        animator.SetBool("isSkill1", true);
+                    }
+
+
+                    if (isSkill1)
+                    {
+                        endSkill1Time += Time.deltaTime;
+                        if (endSkill1Time - startSkill1Time > skill1CoolTime)
+                        {
+                            //스킬발동 
+
+                            endSkill1Time = 0f;
+                        }
+                        if (endSkill1Time - startSkill1Time > skill1AfterDelay)
+                        {
+                            animator.SetBool("isStand", true);
+                        }
+                        return;
+                    }
+                }
+
+
+                //1-3-1. 캐릭터가 공격중이 아니라면 공격 시작
+                if (!isAttack)
+                {
+                    isAttack = true;
+                    animator.SetBool("isAttack", true);
+                }
+
+                //1-3-2. 캐릭터가 공격 중 
+                if (isAttack)
+                {
+
+                    endAttackTime += Time.deltaTime;
+
+                    if (endAttackTime - startAttackTime < attackCoolTime)
+                    {
+                        return;
+                    }
+
+                    //피사체 유무
+                    //피사체 유 : 피사체를 날리고 공격대상을 넘겨준다.
+                    if (isProtectileFlag)
+                    {
+                        enemyStatus.setDamage(this.attack);
+                    }
+                    //피사체 무 : 바로 공격한다.
+                    else
+                    {
+                        enemyStatus.setDamage(this.attack);
+                    }
+                }
+
             }
+
+
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class EnemyMoveScript : CharacterAttributeScript
@@ -18,27 +19,8 @@ public class EnemyMoveScript : CharacterAttributeScript
 
     Animator animator;
 
-
-    //애니메이션 플래그
-    bool isAttack = false;
-    bool isMoving = true;
-    bool isDamage = false;
-    bool idDie = false;
-
-    [SerializeField]
-    private CanvasGroup healthGroup;
-
-    public override Transform Select() {
-        healthGroup.alpha = 1;
-        return base.Select();
-    }
-
-    public override void DeSelect()
-    {
-        healthGroup.alpha = 0;
-
-        base.DeSelect();
-    }
+    public GameObject hpBarPosition;
+    public Image imgHp;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +30,26 @@ public class EnemyMoveScript : CharacterAttributeScript
         collider = gameObject.GetComponent<Collider2D>();
 
         animator = gameObject.GetComponentInChildren<Animator>();
+
+        //imgHp.fillAmount = 1f;
+
     }
 
 
     void Update()
     {
+        if(imgHp != null) {
+
+            float myHp = hp;
+            imgHp.fillAmount = myHp / maxHp;
+            Debug.Log("-------");
+            Debug.Log(imgHp.fillAmount);
+
+            //hp 위치 
+            imgHp.transform.position = hpBarPosition.transform.position;
+        }
+
+
         Vector3 velocity = Vector3.zero;
         velocity = new Vector3(-5f, 0, 0);
 

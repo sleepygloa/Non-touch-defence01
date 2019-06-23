@@ -5,9 +5,9 @@ using UnityEngine;
 public class CharacterAttributeScript : MonoBehaviour
 {
 
-    [SerializeField]
-    protected Transform hitBox;
 
+    public float maxHp = 10;
+    public float maxMp = 5;
     public float hp = 10;
     public float mp = 5;
     public float stamina = 100;
@@ -43,7 +43,8 @@ public class CharacterAttributeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp = maxHp;
+        mp = maxMp;
     }
 
     // Update is called once per frame
@@ -58,10 +59,5 @@ public class CharacterAttributeScript : MonoBehaviour
     }
 
 
-    public virtual void DeSelect() { 
-    }
 
-    public virtual Transform Select() {
-        return hitBox;
-    }
 }
