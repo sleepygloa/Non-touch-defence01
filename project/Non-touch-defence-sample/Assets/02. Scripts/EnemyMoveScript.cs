@@ -22,6 +22,11 @@ public class EnemyMoveScript : CharacterAttributeScript
     public GameObject hpBarPosition;
     public Image imgHp;
 
+    float myHp;
+
+    //데미지 텍스트 
+    public GameObject damageTextPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,14 +41,47 @@ public class EnemyMoveScript : CharacterAttributeScript
     }
 
 
+    void ShowFloatingDamageText() {
+
+        var getDamageText = myHp - hp;
+        //Text damageText;
+        Debug.Log(getDamageText);
+        if (!getDamageText.Equals(0f))
+        {
+            //hp 위치 
+
+            //damageText.transform.position = damageTextObj.transform.position;
+
+
+            //Text damageText = damageTextObjClone.GetComponentInChildren<Text>();
+            //var damageTextObjClone = Instantiate(damageTextPrefab, gameObject.GetComponentInChildren<Transform>()) as GameObject;
+            var go = Instantiate(damageTextPrefab, gameObject.transform);
+            go.GetComponent<TextMesh>().text = getDamageText.ToString();
+
+
+            //var damageTextObjClone = Instantiate(damageTextPrefab, transform.position);
+            //damageTextObjClone.GetComponentInChildren<Text>().text = "" + getDamageText;
+            ////damageTextObjClone.transform.SetParent(this.transform);
+            //damageTextObjClone.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1);
+
+        }
+
+
+
+    }
+
     void Update()
     {
+        //HpBar 이미지 있을 때 표시
         if(imgHp != null) {
 
-            float myHp = hp;
+            //데미지 표시
+            if(myHp > hp) {
+                ShowFloatingDamageText();
+            }
+
+            myHp = hp;
             imgHp.fillAmount = myHp / maxHp;
-            Debug.Log("-------");
-            Debug.Log(imgHp.fillAmount);
 
             //hp 위치 
             imgHp.transform.position = hpBarPosition.transform.position;
@@ -72,7 +110,10 @@ public class EnemyMoveScript : CharacterAttributeScript
             transform.position += velocity * movePower * Time.deltaTime;
         }
 
+        //자신의 hp 가 0 이 되면 죽음상태로 변환
         if(hp <= 0) {
+
+            isDie = true;
             animator.SetBool("isDie", true);
 
             animator.SetBool("isRemove", true);

@@ -43,7 +43,7 @@ public class PlayerMoveScript : CharacterAttributeScript
     CharacterAttributeScript enemyStatus;
 
     //적을 처음 찾은 시간과 두번째 찾은 시간 
-    float startFindTime = 0f;
+    //float startFindTime = 0f;
     float endFindTime = 0f;
 
     //공격 시작시간과 경과시간
@@ -136,15 +136,26 @@ public class PlayerMoveScript : CharacterAttributeScript
             return;
         }
 
+        Debug.Log("======");
+
         if (!targetFlag) {
             //적을 찾아서 공격하는 모션 
             //적(태그로)을 모두 찾아 배열로 저장
             taggedEnemys = GameObject.FindGameObjectsWithTag("Enemy");
 
+            int cnt = 0;
             //적의 수만큼 루프를 돔.
             foreach (GameObject taggedEnemy in taggedEnemys)
             {
+                cnt++;
+                Debug.Log("***** " + taggedEnemy.name + " *****");
+                //찾은 적이 죽었다면 패스
+                CharacterAttributeScript enermyCa = taggedEnemy.GetComponent<CharacterAttributeScript>();
+                if (enermyCa.isDie) {
+                    continue;
+                }
 
+                Debug.Log(taggedEnemy);
                 //적의 위치
                 Vector3 objectPos = taggedEnemy.transform.position;
                 //적과 캐릭터의 거리 계산
@@ -154,7 +165,7 @@ public class PlayerMoveScript : CharacterAttributeScript
                 if (dist < findEnemyRange)
                 {
                     //발견
-                    //Debug.Log("find enemy");
+                    Debug.Log("find enemy");
 
                     //절 발견 플래그 변경
                     targetFlag = true;
@@ -164,14 +175,16 @@ public class PlayerMoveScript : CharacterAttributeScript
                 }
                 else
                 {
-                    //Debug.Log("no enemy");
+                    cnt = 0;
+                    Debug.Log("no enemy");
                     fnCharacterStatusInit();
                     return;
                 }
             }
-        }else  {
-
-            if(targetEnemy != null) {
+            Debug.Log("target find" + targetFlag);
+        }else{
+            Debug.Log("target unfind" + targetFlag);
+            if (targetEnemy != null) {
                 //적의 상태창 조회
                 enemyStatus = targetEnemy.GetComponent<CharacterAttributeScript>();
 
@@ -266,6 +279,10 @@ public class PlayerMoveScript : CharacterAttributeScript
                 {
 
                     endAttackTime += Time.deltaTime;
+                    //Debug.Log("000000");
+                    //Debug.Log(endAttackTime);
+                    //Debug.Log(attackCoolTime);
+                    //Debug.Log("000000");
 
                     if (endAttackTime - startAttackTime < attackCoolTime)
                     {
@@ -295,6 +312,7 @@ public class PlayerMoveScript : CharacterAttributeScript
 
     //적찾는 행동 초기화
     private void fnFindEnemyInit() {
+        targetFlag = false;
         taggedEnemys = null;
         targetEnemy = null;
         endFindTime = 0f;

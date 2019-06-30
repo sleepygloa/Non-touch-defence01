@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{2C6A8AEE-397E-6593-3B02-5FEF2927DC96}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/02. Scripts/EnemyMoveScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/02. Scripts/PlayerMoveScript.cs">
     <Files>
-      <File FileName="Assets/02. Scripts/CharacterAttributeScript.cs" Line="20" Column="27" />
-      <File FileName="Assets/02. Scripts/PlayerMoveScript.cs" Line="190" Column="28" />
-      <File FileName="Assets/02. Scripts/EnemyMoveScript.cs" Line="42" Column="1" />
+      <File FileName="Assets/02. Scripts/Common/GameManager.cs" Line="66" Column="51" />
+      <File FileName="Assets/02. Scripts/ObjectPool.cs" Line="21" Column="70" />
+      <File FileName="Assets/02. Scripts/Common/Singleton.cs" Line="4" Column="32" />
+      <File FileName="Assets/02. Scripts/PlayerMoveScript.cs" Line="151" Column="67" />
+      <File FileName="Assets/02. Scripts/EnemyMoveScript.cs" Line="116" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +13,8 @@
           <Node name="Non-touch-defence-sample" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="02. Scripts" expanded="True">
-                <Node name="EnemyMoveScript.cs" selected="True" />
+                <Node name="Common" expanded="True" />
+                <Node name="PlayerMoveScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -21,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="09e4f546-8a54-45fd-ae9b-6219ce91a061" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d587153f-8722-4f09-9d55-48d552c7203a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
