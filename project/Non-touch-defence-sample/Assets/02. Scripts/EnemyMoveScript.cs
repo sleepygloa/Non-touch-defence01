@@ -20,6 +20,7 @@ public class EnemyMoveScript : CharacterAttributeScript
     Animator animator;
 
     public GameObject hpBarPosition;
+    public Image imgHpBackground;
     public Image imgHp;
 
     float myHp;
@@ -37,6 +38,7 @@ public class EnemyMoveScript : CharacterAttributeScript
         animator = gameObject.GetComponentInChildren<Animator>();
 
         //imgHp.fillAmount = 1f;
+
 
     }
 
@@ -119,7 +121,10 @@ public class EnemyMoveScript : CharacterAttributeScript
             animator.SetBool("isRemove", true);
             destoryTime += Time.deltaTime;
 
-            if(destoryTime >= 5f) {
+            //HP 숨기기
+            imgHpBackground.enabled = false;
+
+            if (destoryTime >= 5f) {
                 Destroy(gameObject);
             }
 

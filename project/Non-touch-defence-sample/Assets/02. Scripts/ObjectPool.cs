@@ -22,7 +22,7 @@ public class ObjectPool : MonoBehaviour
                 newObject.name = type+"_"+ enermyNum;
 
 
-                int spawnPosition = Random.Range(-50, 15);
+                int spawnPosition = Random.Range(-150, 15);
                 newObject.transform.position = new Vector2(newObject.transform.position.x + spawnPosition, newObject.transform.position.y);
                 return newObject;
             }

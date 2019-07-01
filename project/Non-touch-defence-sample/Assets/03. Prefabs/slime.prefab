@@ -335,9 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f92c2def71d4d1abbd7c882832bbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 50
+  maxHp: 3
   maxMp: 10
-  hp: 50
+  hp: 3
   mp: 5
   stamina: 100
   attack: 2
@@ -364,6 +364,7 @@ MonoBehaviour:
   learnSkiil2: 0
   movePower: 5
   hpBarPosition: {fileID: 8800375531918885650}
+  imgHpBackground: {fileID: 8800375531918885652}
   imgHp: {fileID: 8800375530929621087}
   damageTextPrefab: {fileID: 4666327174667685141, guid: 61ac3bc2164a94fe6b3b6de352dbafef,
     type: 3}
