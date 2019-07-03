@@ -161,28 +161,30 @@ public class PlayerMoveScript : CharacterAttributeScript
                 //적과 캐릭터의 거리 계산
                 var dist = (objectPos - transform.position).sqrMagnitude;
 
-                //적이 멀리 있다면 다음 적 찾기
-                if(dist > findEnemyRange) {
-                    Debug.Log("very far ");
-                    continue;
-                }
-
                 //적이 (캐릭터가 적을 발견할 거리변수)변수 안으로 들어왔을때
+                if (dist < findEnemyRange)
+                {
+                    //발견
+                    Debug.Log("find enemy");
 
-                //발견
-                Debug.Log("find enemy");
+                    //절 발견 플래그 변경
+                    targetFlag = true;
 
-                //절 발견 플래그 변경
-                targetFlag = true;
-
-                //적 선택            
-                targetEnemy = taggedEnemy;
+                    //적 선택            
+                    targetEnemy = taggedEnemy;
+                }
+                else
+                {
+                    cnt = 0;
+                    Debug.Log("no enemy");
+                    fnCharacterStatusInit();
+                    return;
+                }
             }
-            Debug.Log("target find " + targetFlag);
+            Debug.Log("target find" + targetFlag);
         }else{
-            Debug.Log("target unfind " + targetFlag);
-
-               
+            Debug.Log("target unfind" + targetFlag);
+            if (targetEnemy != null) {
                 //적의 상태창 조회
                 enemyStatus = targetEnemy.GetComponent<CharacterAttributeScript>();
 
@@ -202,8 +204,8 @@ public class PlayerMoveScript : CharacterAttributeScript
                 {
                     Debug.Log("0");
                     fnFindEnemyInit();
-                return;
-            }
+                    return;
+                }
 
                 //1-3. 적이 살아있다 !
                 //1-3-3. 스킬2 을 배웠다면, 스킬이 쿨다운 상태인지 확인
@@ -268,7 +270,6 @@ public class PlayerMoveScript : CharacterAttributeScript
                 //1-3-1. 캐릭터가 공격중이 아니라면 공격 시작
                 if (!isAttack)
                 {
-                Debug.Log("non attack");
                     isAttack = true;
                     animator.SetBool("isAttack", true);
                 }
@@ -276,10 +277,12 @@ public class PlayerMoveScript : CharacterAttributeScript
                 //1-3-2. 캐릭터가 공격 중 
                 if (isAttack)
                 {
-                    if (!animator.GetBool("isAttack")) animator.SetBool("isAttack", true);
 
-                    Debug.Log("attack");
                     endAttackTime += Time.deltaTime;
+                    //Debug.Log("000000");
+                    //Debug.Log(endAttackTime);
+                    //Debug.Log(attackCoolTime);
+                    //Debug.Log("000000");
 
                     if (endAttackTime - startAttackTime < attackCoolTime)
                     {
@@ -291,22 +294,21 @@ public class PlayerMoveScript : CharacterAttributeScript
                     if (isProtectileFlag)
                     {
                         enemyStatus.setDamage(this.attack);
-                        endAttackTime = 0f;
-
-
                     }
                     //피사체 무 : 바로 공격한다.
                     else
                     {
                         enemyStatus.setDamage(this.attack);
-                        endAttackTime = 0f;
                     }
-                
                 }
 
-        }
-    }
+            }
 
+
+        }
+
+
+    }
 
     //적찾는 행동 초기화
     private void fnFindEnemyInit() {
@@ -353,7 +355,7 @@ public class PlayerMoveScript : CharacterAttributeScript
 
     private void fnAniamtorInit() {
         animator.SetBool("isAttack", false);
-        animator.SetBool("isMoving", true);
+        animator.SetBool("isMoving", false);
         animator.SetBool("isSkill1", false);
         animator.SetBool("isSkill2", false);
         animator.SetBool("isDie", false);

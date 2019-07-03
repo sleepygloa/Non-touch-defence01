@@ -12,7 +12,7 @@ public class GameManager : Singleton<GameManager>
     private int treeHp; //세계수 HP
     private int treeMaxHp; //세계수 HP 최대치
 
-    public int enermyNum;
+    private int enermyNum = 5;
 
     //세계수 정보 컨트롤
     public int treeLevel = 1;
@@ -23,7 +23,6 @@ public class GameManager : Singleton<GameManager>
     public int cityLevel = 1;
 
     public ArrayList playerList;
-
 
     [SerializeField]
     public ObjectPool Pool {
