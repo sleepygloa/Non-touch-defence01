@@ -161,9 +161,15 @@ public class PlayerMoveScript : CharacterAttributeScript
                 //적과 캐릭터의 거리 계산
                 var dist = (objectPos - transform.position).sqrMagnitude;
 
-                //적이 (캐릭터가 적을 발견할 거리변수)변수 안으로 들어왔을때
-                if (dist < findEnemyRange)
+                if ((int)dist > (int)findEnemyRange)
                 {
+                    cnt = 0;
+                    Debug.Log("no enemy");
+                    fnCharacterStatusInit();
+                    continue;
+                }
+                else {
+                    //적이 (캐릭터가 적을 발견할 거리변수)변수 안으로 들어왔을때
                     //발견
                     Debug.Log("find enemy");
 
@@ -172,14 +178,9 @@ public class PlayerMoveScript : CharacterAttributeScript
 
                     //적 선택            
                     targetEnemy = taggedEnemy;
-                }
-                else
-                {
-                    cnt = 0;
-                    Debug.Log("no enemy");
-                    fnCharacterStatusInit();
                     return;
                 }
+
             }
             Debug.Log("target find" + targetFlag);
         }else{
@@ -293,11 +294,15 @@ public class PlayerMoveScript : CharacterAttributeScript
                     //피사체 유 : 피사체를 날리고 공격대상을 넘겨준다.
                     if (isProtectileFlag)
                     {
+                        endAttackTime = 0f;
+                        animator.SetBool("isAttack", true);
                         enemyStatus.setDamage(this.attack);
                     }
                     //피사체 무 : 바로 공격한다.
                     else
                     {
+                        endAttackTime = 0f;
+                        animator.SetBool("isAttack", true);
                         enemyStatus.setDamage(this.attack);
                     }
                 }
@@ -355,7 +360,7 @@ public class PlayerMoveScript : CharacterAttributeScript
 
     private void fnAniamtorInit() {
         animator.SetBool("isAttack", false);
-        animator.SetBool("isMoving", false);
+        animator.SetBool("isMoving", true);
         animator.SetBool("isSkill1", false);
         animator.SetBool("isSkill2", false);
         animator.SetBool("isDie", false);
