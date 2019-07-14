@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{2C6A8AEE-397E-6593-3B02-5FEF2927DC96}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/02. Scripts/HeroReadySciprt.cs">
+    <Files>
+      <File FileName="Assets/02. Scripts/Common/GameManager.cs" Line="109" Column="1" />
+      <File FileName="Assets/02. Scripts/ObjectPool.cs" Line="25" Column="58" />
+      <File FileName="Assets/02. Scripts/Common/Singleton.cs" Line="4" Column="32" />
+      <File FileName="Assets/02. Scripts/PlayerMoveScript.cs" Line="170" Column="18" />
+      <File FileName="Assets/02. Scripts/EnemyMoveScript.cs" Line="48" Column="1" />
+      <File FileName="Assets/02. Scripts/HeroReadySciprt.cs" Line="16" Column="50" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Non-touch-defence-sample" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="02. Scripts" expanded="True">
+                <Node name="Common" expanded="True" />
+                <Node name="HeroReadySciprt.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="efc4e40e-2be3-4db0-a39c-290db17526ec" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
