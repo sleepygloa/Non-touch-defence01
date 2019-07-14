@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{EDCA8DA9-82B0-1750-32D8-032B6B8EE4B6}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2.Script/ClickViewPopupScript.cs">
+    <Files>
+      <File FileName="Assets/NGUI/ReadMe - 2018.3.0.txt" Line="1" Column="1" />
+      <File FileName="Assets/NGUI/Scripts/Editor/UIAtlasMaker.cs" Line="716" Column="36" />
+      <File FileName="Assets/2.Script/ClickViewPopupScript.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="worldTreeDefence_20190701" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="2.Script" expanded="True">
+                <Node name="ClickViewPopupScript.cs" selected="True" />
+              </Node>
+              <Node name="NGUI" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="Editor" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="73bd11b9-af6a-470b-9e2c-19350fb849bc" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

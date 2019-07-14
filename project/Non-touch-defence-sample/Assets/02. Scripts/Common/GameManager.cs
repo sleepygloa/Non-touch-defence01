@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -89,4 +90,21 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("End Wave");
         yield return new WaitForSeconds(2.5f);
     }
+
+    //영웅 정보창 보이기
+    public Canvas heroPickCanvas;
+    private bool heroPickCanvasFlag = false;
+    public void viewHeroPick() 
+    {
+        if (!heroPickCanvasFlag) {
+            heroPickCanvas.transform.position = new Vector3(heroPickCanvas.transform.position.x, heroPickCanvas.transform.position.y, -5);
+            heroPickCanvasFlag = true;
+        }
+        else {
+            heroPickCanvas.transform.position = new Vector3(heroPickCanvas.transform.position.x, heroPickCanvas.transform.position.y, -11);
+            heroPickCanvasFlag = false;
+        }
+    }
+
+
 }

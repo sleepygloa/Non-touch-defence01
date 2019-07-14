@@ -70,6 +70,8 @@
     <Compile Include="Assets\02. Scripts\damageTextDestoryTimeScript.cs" />
     <Compile Include="Assets\02. Scripts\EmenyScript.cs" />
     <Compile Include="Assets\02. Scripts\EnemyMoveScript.cs" />
+    <Compile Include="Assets\02. Scripts\HeroPickScript.cs" />
+    <Compile Include="Assets\02. Scripts\HeroReadySciprt.cs" />
     <Compile Include="Assets\02. Scripts\ObjectPool.cs" />
     <Compile Include="Assets\02. Scripts\PlayerMoveScript.cs" />
     <Compile Include="Assets\02. Scripts\ProjectTileScript.cs" />
