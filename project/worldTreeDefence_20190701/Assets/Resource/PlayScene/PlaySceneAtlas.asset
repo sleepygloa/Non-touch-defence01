@@ -28,8 +28,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bar_1
-    x: 1728
-    y: 375
+    x: 1760
+    y: 259
     width: 208
     height: 26
     borderLeft: 0
@@ -41,8 +41,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bar_2
-    x: 1728
-    y: 402
+    x: 1760
+    y: 286
     width: 210
     height: 26
     borderLeft: 0
@@ -54,8 +54,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: dia
-    x: 1770
-    y: 437
+    x: 1601
+    y: 243
     width: 158
     height: 185
     borderLeft: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: gold
-    x: 1601
-    y: 137
+    x: 1760
+    y: 313
     width: 92
     height: 115
     borderLeft: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
     paddingBottom: 40
   - name: gold 1
     x: 1601
-    y: 253
+    y: 67
     width: 126
     height: 175
     borderLeft: 0
@@ -157,8 +157,21 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: level
+    x: 1770
+    y: 464
+    width: 187
+    height: 158
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 7
+    paddingTop: 23
+    paddingBottom: 19
   - name: tree
-    x: 1929
+    x: 1958
     y: 434
     width: 86
     height: 188
