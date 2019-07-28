@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{EDCA8DA9-82B0-1750-32D8-032B6B8EE4B6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2.Script/HeroScrollViewScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2.Script/Common/GameManager.cs">
     <Files>
-      <File FileName="Assets/2.Script/HeroScrollViewScript.cs" Line="6" Column="2" />
+      <File FileName="Assets/2.Script/Common/GameManager.cs" Line="83" Column="29" />
+      <File FileName="Assets/2.Script/Common/HeroListManager.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,7 +10,9 @@
           <Node name="worldTreeDefence_20190701" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="2.Script" expanded="True">
-                <Node name="HeroScrollViewScript.cs" selected="True" />
+                <Node name="Common" expanded="True">
+                  <Node name="GameManager.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="NGUI" expanded="True">
                 <Node name="Scripts" expanded="True">
@@ -24,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="73bd11b9-af6a-470b-9e2c-19350fb849bc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="187e6826-c1f7-4418-a389-ada2090d257d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

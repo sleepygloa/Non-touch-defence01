@@ -60,7 +60,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\2.Script\CharacterAttributeScript.cs" />
+    <Compile Include="Assets\2.Script\Common\GameManager.cs" />
+    <Compile Include="Assets\2.Script\Common\HeroListManager.cs" />
+    <Compile Include="Assets\2.Script\Common\LevelManager.cs" />
+    <Compile Include="Assets\2.Script\Common\Singleton.cs" />
+    <Compile Include="Assets\2.Script\EnemyMoveScript.cs" />
+    <Compile Include="Assets\2.Script\HeroDetailViewScript.cs" />
+    <Compile Include="Assets\2.Script\HeroScrollViewClickScript.cs" />
     <Compile Include="Assets\2.Script\HeroScrollViewScript.cs" />
+    <Compile Include="Assets\2.Script\ObjectPool.cs" />
+    <Compile Include="Assets\2.Script\PlayerMoveScript.cs" />
+    <Compile Include="Assets\DamaageTextScript.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />

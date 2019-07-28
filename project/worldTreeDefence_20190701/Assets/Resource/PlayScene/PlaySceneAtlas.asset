@@ -28,7 +28,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bar_1
-    x: 127
+    x: 159
     y: 994
     width: 208
     height: 26
@@ -41,7 +41,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bar_2
-    x: 127
+    x: 159
     y: 1021
     width: 210
     height: 26
@@ -53,33 +53,7 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: dia
-    x: 1789
-    y: 1110
-    width: 158
-    height: 185
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 23
-    paddingRight: 19
-    paddingTop: 9
-    paddingBottom: 6
-  - name: dia2
-    x: 1802
-    y: 1303
-    width: 168
-    height: 193
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 19
-    paddingRight: 13
-    paddingTop: 5
-    paddingBottom: 2
-  - name: frame1
+  - name: black
     x: 1802
     y: 1848
     width: 200
@@ -92,8 +66,47 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: frame2
+  - name: dia
+    x: 0
+    y: 862
+    width: 158
+    height: 185
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 19
+    paddingTop: 9
+    paddingBottom: 6
+  - name: dia2
     x: 1601
+    y: 1102
+    width: 168
+    height: 193
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 19
+    paddingRight: 13
+    paddingTop: 5
+    paddingBottom: 2
+  - name: frame1
+    x: 1601
+    y: 1497
+    width: 200
+    height: 200
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: frame2
+    x: 1802
     y: 1497
     width: 200
     height: 200
@@ -120,7 +133,7 @@ MonoBehaviour:
     paddingBottom: 40
   - name: gold 1
     x: 0
-    y: 872
+    y: 686
     width: 126
     height: 175
     borderLeft: 0
@@ -132,19 +145,6 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 12
   - name: heroReadyNonPick
-    x: 1802
-    y: 1497
-    width: 200
-    height: 200
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: heroReadyPick
     x: 1601
     y: 1296
     width: 200
@@ -157,8 +157,21 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: heroReadyPick
+    x: 1802
+    y: 1296
+    width: 200
+    height: 200
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: level
-    x: 1601
+    x: 1770
     y: 1137
     width: 187
     height: 158
@@ -184,7 +197,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: pop2_hero
-    x: 1601
+    x: 1770
     y: 1096
     width: 185
     height: 40
@@ -197,7 +210,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tree
-    x: 1948
+    x: 1958
     y: 1107
     width: 86
     height: 188
