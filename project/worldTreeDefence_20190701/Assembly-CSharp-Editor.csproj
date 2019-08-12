@@ -410,6 +410,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Assets/MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>

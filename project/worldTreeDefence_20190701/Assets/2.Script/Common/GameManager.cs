@@ -80,11 +80,17 @@ public class GameManager : Singleton<GameManager>
             GameObject newHeroListObj = Instantiate(heroSelectListPrefab);
             //Sprite newHeroLxistObjImg =  newHeroListObj.GetComponentInChildren<Sprite>();
 
+
+
             //게임 오브젝트 위치 변경 
             GameObject parent = GameObject.Find("HeroScrollViewList");
-            Debug.Log(parent);
+            //Debug.Log(parent);
+
             newHeroListObj.transform.parent = parent.transform;
-            //newHeroListObj
+
+            //위치와 스케일 초기화
+            newHeroListObj.transform.localPosition = new Vector3(0, 120 - ( 50 * i), 0); ;
+            newHeroListObj.transform.localScale = Vector3.one;
 
             //게임 오브젝트 내용 추가
             //newHeroListObj.GetComponentInChildren<Text>().text = str;
@@ -92,9 +98,9 @@ public class GameManager : Singleton<GameManager>
 
 
             UILabel newHeroListObjTxt = newHeroListObj.GetComponentInChildren<UILabel>();
-            Debug.Log(newHeroListObjTxt);
+            //Debug.Log(newHeroListObjTxt);
             newHeroListObjTxt.text = str;
-            Debug.Log(newHeroListObjTxt);
+            //Debug.Log(newHeroListObjTxt);
 
 
 

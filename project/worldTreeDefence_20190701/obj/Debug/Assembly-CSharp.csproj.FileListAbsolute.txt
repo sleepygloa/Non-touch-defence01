@@ -118,15 +118,10 @@
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/System.Xml.XmlSerializer.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/System.Xml.XPath.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/System.Xml.XPath.XDocument.dll
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.Analytics.DataPrivacy.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.Analytics.Editor.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.Analytics.StandardEvents.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.Analytics.Tracker.dll
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.CollabProxy.Editor.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.Locator.dll
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.PackageManagerUI.Editor.dll
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.TextMeshPro.dll
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.TextMeshPro.Editor.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEditor.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEngine.AccessibilityModule.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEngine.Advertisements.dll
@@ -211,11 +206,6 @@
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEngine.xml
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEditor.dll.mdb
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEditor.xml
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.TextMeshPro.Editor.pdb
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.PackageManagerUI.Editor.pdb
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.CollabProxy.Editor.pdb
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.TextMeshPro.pdb
-/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/Unity.Analytics.DataPrivacy.pdb
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEngine.AIModule.dll.mdb
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEngine.AIModule.xml
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/UnityEngine.ARModule.dll.mdb
@@ -359,3 +349,4 @@
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/obj/Debug/Assembly-CSharp.dll
 /Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/obj/Debug/Assembly-CSharp.pdb
+/Users/seonhokim/wms/workspace/Non-touch-defence01/project/worldTreeDefence_20190701/Temp/bin/Debug/MySql.Data.dll

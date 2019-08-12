@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{EDCA8DA9-82B0-1750-32D8-032B6B8EE4B6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2.Script/Common/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2.Script/Common/SqlManager.cs">
     <Files>
-      <File FileName="Assets/2.Script/Common/GameManager.cs" Line="83" Column="29" />
-      <File FileName="Assets/2.Script/Common/HeroListManager.cs" Line="11" Column="1" />
+      <File FileName="Assets/2.Script/Common/GameManager.cs" Line="87" Column="33" />
+      <File FileName="Assets/2.Script/HeroScrollViewScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/2.Script/Common/SqlManager.cs" Line="11" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +12,7 @@
             <Node name="Assets" expanded="True">
               <Node name="2.Script" expanded="True">
                 <Node name="Common" expanded="True">
-                  <Node name="GameManager.cs" selected="True" />
+                  <Node name="SqlManager.cs" selected="True" />
                 </Node>
               </Node>
               <Node name="NGUI" expanded="True">
@@ -27,7 +28,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="187e6826-c1f7-4418-a389-ada2090d257d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="28c692a8-88f1-4fc8-8788-1159b74d40ad" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
