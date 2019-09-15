@@ -8,8 +8,8 @@ public class SqlManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        connection();
-        Select("SELECT * FROM TB_GAME_DEFENCE_TREE_WORLD_HERO;");
+        //connection();
+        //Select("SELECT * FROM TB_GAME_DEFENCE_TREE_WORLD_HERO;");
 
     }
 

@@ -19,8 +19,8 @@ public class GameManager : Singleton<GameManager>
     //게임 시작시 데이터베이스에서 저장된 정보를 불러온다 
 
     //캐릭터 정보를 2차원 배열로 저장
-    private Dictionary<string, Dictionary<string, string>> playInfo;
-    private string[] strArray = { "swordman", "thief", "mage", "acolight" };
+    public Dictionary<string, Dictionary<string, string>> playInfo;
+    private string[] strArray = { "swordman", "thief", "mage", "acolite" };
 
     //세계수의 정보를 2차원 배열로 저장
     private Dictionary<string, string> treeInfo;
@@ -47,13 +47,9 @@ public class GameManager : Singleton<GameManager>
 
 
 
-    //캐릭터 
+    //캐릭터 선택창 리스트 프리팹 오브젝트
     public GameObject heroSelectListPrefab;
-
-
-
-    //public static GameManager instance;
-
+    
     private void Awake()
     {
         //instance = this;
@@ -64,49 +60,16 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        //유닛 기본 세팅 
+        //유닛의 기본정보 세팅
+        //이름, 스텟, 등등..
         infoSetting();
 
-
-        //영웅 선택 리스트 창 세팅
-        for (int i = 0; i < strArray.Length; i++)
-        {
-            string str = strArray[i];
-            Debug.Log(str);
-            //playInfo[str];
-            //ht["swordman"];
-
-            //추가할 오브젝트 생성
-            GameObject newHeroListObj = Instantiate(heroSelectListPrefab);
-            //Sprite newHeroLxistObjImg =  newHeroListObj.GetComponentInChildren<Sprite>();
+        //사용자 정보가 있다면 불러온다.
 
 
-
-            //게임 오브젝트 위치 변경 
-            GameObject parent = GameObject.Find("HeroScrollViewList");
-            //Debug.Log(parent);
-
-            newHeroListObj.transform.parent = parent.transform;
-
-            //위치와 스케일 초기화
-            newHeroListObj.transform.localPosition = new Vector3(0, 120 - ( 50 * i), 0); ;
-            newHeroListObj.transform.localScale = Vector3.one;
-
-            //게임 오브젝트 내용 추가
-            //newHeroListObj.GetComponentInChildren<Text>().text = str;
-
-
-
-            UILabel newHeroListObjTxt = newHeroListObj.GetComponentInChildren<UILabel>();
-            //Debug.Log(newHeroListObjTxt);
-            newHeroListObjTxt.text = str;
-            //Debug.Log(newHeroListObjTxt);
-
-
-
-
-        }
     }
+       
+    
 
     private void infoSetting() {
 
@@ -115,7 +78,7 @@ public class GameManager : Singleton<GameManager>
         //플레이어 기본정보 세팅
         for (int i = 0; i < strArray.Length; i++)
         {
-            Debug.Log("=== GameManager ... Hero Info Settings.... ===");
+            Debug.Log("=== GameManager ... Hero Info Settings.... ===" + i);
             string str = strArray[i];
 
 
@@ -123,29 +86,29 @@ public class GameManager : Singleton<GameManager>
     
             newHt = new Dictionary<string, string>();
 
-            newHt.Add("name", str);//이름, 이름이 곧 직업
-            newHt.Add("level", "1");
-            newHt.Add("exp", "0");
-            newHt.Add("cost", "1000");
-            newHt.Add("hp", "10");
-            newHt.Add("mp", "5");
-            newHt.Add("speed", "3"); //1.매우 느림 2. 느림 3보통 4 빠름 5매우빠름
+            newHt.Add("Name", str);//이름, 이름이 곧 직업
+            newHt.Add("Level", "1");
+            newHt.Add("Exp", "0");
+            newHt.Add("Cost", "1000");
+            newHt.Add("Hp", "10");
+            newHt.Add("Mp", "5");
+            newHt.Add("Speed", "3"); //1.매우 느림 2. 느림 3보통 4 빠름 5매우빠름
 
-            newHt.Add("attack", "1");
-            newHt.Add("defence", "1");
-            newHt.Add("attackCoolTime", "2");
-            newHt.Add("range", "1750");
+            newHt.Add("Attack", "1");
+            newHt.Add("Def", "1");
+            newHt.Add("AttackCoolTime", "2");
+            newHt.Add("Range", "1750");
 
-            newHt.Add("skill1Yn", "N");
-            newHt.Add("skill1Attack", "5");
-            newHt.Add("skiil1CollTime", "10");
+            newHt.Add("Skill1Yn", "N");
+            newHt.Add("Skill1Attack", "5");
+            newHt.Add("Skiil1CollTime", "10");
 
-            newHt.Add("skill2Yn", "N");
-            newHt.Add("skill2Attack", "15");
-            newHt.Add("skiil2CollTime", "25");
+            newHt.Add("Skill2Yn", "N");
+            newHt.Add("Skill2Attack", "15");
+            newHt.Add("Skiil2CollTime", "25");
 
             //특징
-            newHt.Add("attackType", "1"); //1 단거리 2 중거리 3 장거리
+            newHt.Add("AttackType", "1"); //1 단거리 2 중거리 3 장거리
             //newHt.Add("cost", "1000");
             //newHt.Add("cost", "1000");
             //newHt.Add("cost", "1000");
@@ -162,10 +125,10 @@ public class GameManager : Singleton<GameManager>
         treeInfo = new Dictionary<string, string>();
 
         //세계수 정보 세팅
-        treeInfo.Add("level", "1");
-        treeInfo.Add("hp", "20");
-        treeInfo.Add("mp", "20");
-        treeInfo.Add("cost", "10000");
+        treeInfo.Add("Level", "1");
+        treeInfo.Add("Hp", "20");
+        treeInfo.Add("Mp", "20");
+        treeInfo.Add("Cost", "10000");
 
 
     }
