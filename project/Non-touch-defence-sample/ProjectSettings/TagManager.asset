@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Protectile
   - Enemy
+  - ENERMY
   layers:
   - Default
   - TransparentFX
@@ -16,24 +17,24 @@ TagManager:
   - 
   - 
   - background
-  - play
-  - ui
+  - backgroundUI
   - button
   - 
   - 
   - 
   - 
+  - player
   - 
   - 
   - 
   - 
+  - popup
   - 
   - 
+  - popupui
   - 
   - 
-  - 
-  - 
-  - 
+  - popupButton
   - 
   - 
   - 
@@ -46,7 +47,7 @@ TagManager:
   - name: background
     uniqueID: 312277309
     locked: 0
-  - name: UI
+  - name: backgroundUI
     uniqueID: 2973608317
     locked: 0
   - name: button
@@ -54,4 +55,13 @@ TagManager:
     locked: 0
   - name: play
     uniqueID: 2321197499
+    locked: 0
+  - name: popup
+    uniqueID: 4006890753
+    locked: 0
+  - name: popupui
+    uniqueID: 335631253
+    locked: 0
+  - name: popupButton
+    uniqueID: 3903437591
     locked: 0
