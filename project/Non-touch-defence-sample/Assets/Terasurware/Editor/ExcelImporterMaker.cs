@@ -119,14 +119,16 @@ public class ExcelImporterMaker : EditorWindow
 				}
 			
 				ISheet sheet = book.GetSheetAt (0);
-
+                Debug.Log(sheet.SheetName);
 				window.className = EditorPrefs.GetString (s_key_prefix + window.fileName + ".className", "Entity_" + sheet.SheetName);
 
 				window.sepalateSheet = EditorPrefs.GetBool (s_key_prefix + window.fileName + ".separateSheet");
 
 				IRow titleRow = sheet.GetRow (0);
 				IRow dataRow = sheet.GetRow (1);
+                Debug.Log("titleRow " + titleRow.LastCellNum);
 				for (int i = 0; i < titleRow.LastCellNum; i++) {
+                    Debug.Log("i " + i);
 					ExcelRowParameter lastParser = null;
 					ExcelRowParameter parser = new ExcelRowParameter ();
 					parser.name = titleRow.GetCell (i).StringCellValue;
@@ -149,7 +151,8 @@ public class ExcelImporterMaker : EditorWindow
 							continue;
 						}
 					}
-				
+                    Debug.Log(cell.NumericCellValue);
+                    Debug.Log(cell.CellType);
 					if (cell.CellType != CellType.Unknown && cell.CellType != CellType.Blank) {
 						parser.isEnable = true;
 

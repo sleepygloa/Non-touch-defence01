@@ -343,7 +343,7 @@ public class PlayerMoveScript : CharacterAttributeScript
     {
         while (true)
         {
-            Debug.Log("여기");
+            
             float x = transform.position.x + Random.Range(-moveDistanceX, moveDistanceX);
             float y = transform.position.y + Random.Range(-moveDistanceY, moveDistanceY);
 
@@ -354,7 +354,7 @@ public class PlayerMoveScript : CharacterAttributeScript
 
             while (Vector2.Distance(transform.position, target) > 0.01f)
             {
-                Debug.Log("여기2");
+                
                 transform.position = Vector2.MoveTowards(transform.position, target, speed);
                 yield return null;
 

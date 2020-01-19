@@ -91,6 +91,7 @@
     <Compile Include="Assets\AstarPathfindingProject\Editor\RVOSquareObstacleEditor.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Editor\SeekerEditor.cs" />
     <Compile Include="Assets\Terasurware\Classes\Editor\EntityTable_importer.cs" />
+    <Compile Include="Assets\Terasurware\Classes\Editor\StageTable_importer.cs" />
     <Compile Include="Assets\Terasurware\Editor\ExcelImporterMaker.cs" />
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.shader" />
     <None Include="Assets\Terasurware\Editor\ExportTemplate.txt" />

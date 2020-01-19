@@ -12,7 +12,7 @@ public class Unit : Entity
     public override void CashingObject()
     {
         myTransform = transform;
-        mySprite = myTransform.Find("ani_sprite").GetComponent<Sprite>();
+        //mySprite = myTransform.Find("ani_sprite").GetComponent<Sprite>();
         //mySprite = myTransform.Find("ani_sprite").GetComponent<tk2dSprite>();
         myCollider = gameObject.GetComponent<BoxCollider2D>();
         if (myCollider == null)

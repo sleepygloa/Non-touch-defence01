@@ -5,8 +5,11 @@ using UnityEngine;
 public class DataManager : SingletonMonobehaviour<DataManager>
 {
     public EntityTable entityData = null;
+
+    public StageTable stageData = null;
     //key, data model..
     public Dictionary<int, EntityModel> entityTable = new Dictionary<int, EntityModel>();
+    public Dictionary<int, StageModel> stageTable = new Dictionary<int, StageModel>();
     //soundData
     public SoundData soundData = null;
     private void Start()
@@ -25,13 +28,30 @@ public class DataManager : SingletonMonobehaviour<DataManager>
             }
         }
 
-        if(this.soundData == null)
+        this.stageData = (StageTable)Resources.Load("Data/StageTable");
+        Debug.Log("StageTable import Start......");
+        foreach (StageTable.Sheet sheet in stageData.sheets)
+        {
+            foreach (StageTable.Param param in sheet.list)
+            {
+                stageTable.Add(param.ID, new StageModel(param.ID, param.Level, param.EntityId, param.EntityCnt, param.BossEntityId, param.BossCnt));
+
+            }
+        }
+
+        Debug.Log("StageTable import end......");
+        if (this.soundData == null)
         {
             this.soundData = ScriptableObject.CreateInstance<SoundData>();
             this.soundData.LoadData();
         }
         
 
+    }
+
+    public EntityModel GetEntityData(string ID) {
+        int r = int.Parse(ID);
+        return GetEntityData(r);
     }
 
     public EntityModel GetEntityData(int ID)
@@ -41,6 +61,18 @@ public class DataManager : SingletonMonobehaviour<DataManager>
             if (this.entityTable.ContainsKey(ID) == true)
             {
                 return this.entityTable[ID];
+            }
+        }
+        return null;
+    }
+
+    public StageModel GetStageData(int ID)
+    {
+        if (this.stageTable.Count > 0)
+        {
+            if (this.stageTable.ContainsKey(ID) == true)
+            {
+                return this.stageTable[ID];
             }
         }
         return null;

@@ -6,8 +6,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 //Singleton<GameManager>
 {
+    //UI ROOT
+    GameObject NGUI_ROOT = null;
+
     //자신
     public static GameManager gm;
+
+    private float readyTimeWave = 5f;
 
     //게스트의 아이디를 기본으로 설정
     private string playerId = "newbi";
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
     public ObjectPool Pool {
         get; set;
     }
+    
 
 
 
@@ -64,13 +70,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        NGUI_ROOT = GameObject.Find("UI Root");
+
+
+        Debug.Log("NGUI_ROOT "+NGUI_ROOT);
+
         //유닛의 기본정보 세팅
         //이름, 스텟, 등등..
-        infoSetting();
+        //infoSetting();
 
         //사용자 정보가 있다면 불러온다.
 
-
+        //웨이브의 상태를 확인.
+        StartCoroutine(getStatusWave());
     }
 
 
@@ -136,9 +148,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+
+    private bool playFlag = false;
+    private int stageMonsterCnt = 0;
+    private int stageNumber = 1;
     public void StartWave()
     {
+        playFlag = true;
         StartCoroutine(SpawnWave());
+
+        
     }
 
     private IEnumerator SpawnWave()
@@ -146,6 +165,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("StartWave");
 
         //스테이지에서 스폰할 몬스터 개체 수 
+        /*
         for(int i = 0; i < enermyNum; i++) {
             int monsterIndex = Random.Range(0, 4);
 
@@ -169,10 +189,126 @@ public class GameManager : MonoBehaviour
 
             Pool.GetObject(type);
         }
+        */
 
         Debug.Log("End Wave");
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.2f);
     }
+
+    //웨이브의 시작.
+    public void startWave() {
+        Debug.Log("========웨이브가 시작되었습니다============");
+        //DataManager.Instance.
+        //EntityManager.Instance.SpawnEntity((int)EntityList.Slime);
+        StageModel stageModel = DataManager.Instance.GetStageData(stageNumber);
+        Debug.Log("=======스폰되는 몬스터 정보는 ID  " + stageModel.EntityId + "============");
+        Debug.Log("=======스폰되는 몬스터 정보는 ID  " + stageModel + "============");
+        EntityModel data = DataManager.Instance.GetEntityData(stageModel.EntityId);
+
+        string entityId = stageModel.EntityId;
+        int entityCnt = stageModel.EntityCnt;
+        string BossEntityId = stageModel.BossEntityId;
+        int BossCnt = stageModel.BossCnt;
+
+
+        Debug.Log(entityCnt);
+        for (var i = 1; i <= entityCnt; i++) {
+
+            int spawnPositionX = Random.Range(650, 700);
+            int spawnPositionY = Random.Range(-220, -300);
+            
+                Debug.Log("몬스터 스폰 중... " + i + "번째 스폰...ㄴ");
+
+                //몬스터 프리팹 로드.
+                GameObject prefab = (GameObject)ResourceManager.Load(data.Prefab);
+
+                //NGUI 프리팹 부모 지정.
+                prefab.transform.parent = NGUI_ROOT.transform;
+                GameObject ClonedPrefab = NGUITools.AddChild(NGUI_ROOT, prefab);
+
+                ClonedPrefab.transform.localScale = Vector3.one;
+                ClonedPrefab.transform.localPosition = new Vector3(spawnPositionX, spawnPositionY, 1);
+
+
+
+                //EntityManager.Instance.SpawnEntity((int)EntityList.Slime);
+
+                //GameObject spawnObject = (GameObject)Instantiate((GameObject)ResourceManager.Load(data.Prefab));
+
+                //spawnObject.transform.position = new Vector3(700f, -250f, 1f);
+                //spawnObject.transform.parent = NGUI_Root.transform;
+                //spawnObject.parent = camera.transfrom;
+                //spawnObject.localposition = new Vector3(700f, -250f, 1f);
+                //spawnObject.transform.position = pos;
+                //spawnObject.transform.localPosition = Vector3.zero;
+                if (i == entityCnt)
+                {
+                    playFlag = false;
+                    
+                }
+            
+
+        }
+        /*
+        int entitySpawnCnt = 0;
+        while (true) {
+            Debug.Log("몬스터 스폰 중... " + entitySpawnCnt);
+
+            GameObject prefab = (GameObject)ResourceManager.Load(data.Prefab);
+
+            prefab.transform.parent = NGUI_ROOT.transform;
+
+
+            //EntityManager.Instance.SpawnEntity((int)EntityList.Slime);
+
+            //GameObject spawnObject = (GameObject)Instantiate((GameObject)ResourceManager.Load(data.Prefab));
+            GameObject ClonedPrefab = NGUITools.AddChild(NGUI_ROOT, prefab);
+            //spawnObject.transform.position = new Vector3(700f, -250f, 1f);
+            //spawnObject.transform.parent = NGUI_Root.transform;
+            ClonedPrefab.transform.localScale = Vector3.one;
+            ClonedPrefab.transform.localPosition = new Vector3(700f, -250f, 1f);
+
+            //spawnObject.parent = camera.transfrom;
+            //spawnObject.localposition = new Vector3(700f, -250f, 1f);
+            //spawnObject.transform.position = pos;
+            //spawnObject.transform.localPosition = Vector3.zero;
+            if (entitySpawnCnt == entityCnt) {
+                playFlag = false;
+                break;
+            }
+            entitySpawnCnt++;
+        }
+
+    */
+
+
+}
+
+    public IEnumerator getStatusWave() {
+        Debug.Log("getStatusWave == start");
+        //몬스터의 개수가 0일때 종료.
+        if (stageMonsterCnt == 0) {
+            //StopCoroutine(getStatusWave());
+
+            //몬스터 개수 0일때 스테이지 1상승.
+            
+
+            Debug.Log("몬스터가 0입니다. 스테이지 넘버 증가합니다. "+ stageNumber + " 플레이 중 파악여부... + "+ playFlag);
+            if (!playFlag) {
+                stageNumber++;
+                //웨이브 시작.
+                startWave();
+                playFlag = true;
+            }
+            
+        }
+
+        
+
+        
+        yield return new WaitForSeconds(readyTimeWave);
+    }
+
 
     //영웅 정보창 보이기
     public Canvas heroPickCanvas;

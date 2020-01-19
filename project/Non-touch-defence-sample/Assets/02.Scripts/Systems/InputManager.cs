@@ -53,7 +53,7 @@ public class InputManager : SingletonMonobehaviour<InputManager>
         public FingerInput(int fID)
         {
             this.fingerID = fID;
-            this.MainCamera = Camera.main.GetComponent<Camera>();
+            //this.MainCamera = Camera.main.GetComponent<Camera>();
             //this.MainCamera = Camera.main.GetComponent<tk2dCamera>();
         }
 
@@ -289,11 +289,11 @@ public class InputManager : SingletonMonobehaviour<InputManager>
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            EntityManager.Instance.SpawnEntity((int)EntityList.WatchTower);
+            EntityManager.Instance.SpawnEntity((int)EntityList.Swordman);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            EntityManager.Instance.SpawnEntity((int)EntityList.Creed);
+            EntityManager.Instance.SpawnEntity((int)EntityList.Slime);
         }
         if (fingerInputDic.Count == 0)
         {

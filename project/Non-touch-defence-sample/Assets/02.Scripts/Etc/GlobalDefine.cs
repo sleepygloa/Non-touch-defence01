@@ -69,8 +69,8 @@ public static class Define
 public enum EntityList : int
 {
     None = -1,
-    WatchTower = 100000,
-    Creed = 100001,
+    Swordman = 100000,
+    Slime = 100001,
     MAX,
 }
 
@@ -118,6 +118,7 @@ public class EntityModel
         this.Prefab = prefabName;
     }
 
+
     public override string ToString()
     {
         StringBuilder builder = new StringBuilder();
@@ -130,6 +131,41 @@ public class EntityModel
         builder.Append("/SearchRange:" + SearchRange.ToString());
         builder.Append("/AttackSpeed:" + AttackSpeed.ToString());
         builder.Append("/Prefab:" + Prefab);
+        return builder.ToString();
+    }
+}
+
+public class StageModel
+{
+
+    public int StageID;
+    public int Level;
+    public string EntityId;
+    public int EntityCnt;
+    public string BossEntityId;
+    public int BossCnt;
+
+
+    public StageModel(int StageID, int level, string EntityId, int EntityCnt, string BossEntityId, int BossCnt)
+    {
+
+        this.StageID = StageID;
+        this.Level = level;
+        this.EntityId = EntityId;
+        this.EntityCnt = EntityCnt;
+        this.BossEntityId = BossEntityId;
+        this.BossCnt = BossCnt;
+    }
+
+    public override string ToString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.Append("StageID:" + StageID);
+        builder.Append("/Level:" + Level);
+        builder.Append("/EntityId:" + EntityId.ToString());
+        builder.Append("/EntityCnt:" + EntityCnt.ToString());
+        builder.Append("/BossEntityId:" + BossEntityId.ToString());
+        builder.Append("/BossCnt:" + BossCnt.ToString());
         return builder.ToString();
     }
 }

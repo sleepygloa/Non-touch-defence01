@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\ArcherScript.cs" />
     <Compile Include="Assets\02.Scripts\CharacterAttributeScript.cs" />
-    <Compile Include="Assets\02.Scripts\Common\GameManager.cs" />
     <Compile Include="Assets\02.Scripts\Common\LevelManager.cs" />
     <Compile Include="Assets\02.Scripts\Common\Singleton.cs" />
     <Compile Include="Assets\02.Scripts\Common\SingletonMonobehaviour.cs" />
@@ -110,6 +109,7 @@
     <Compile Include="Assets\02.Scripts\Systems\CameraManager.cs" />
     <Compile Include="Assets\02.Scripts\Systems\DataManager.cs" />
     <Compile Include="Assets\02.Scripts\Systems\EntityManager.cs" />
+    <Compile Include="Assets\02.Scripts\Systems\GameManager.cs" />
     <Compile Include="Assets\02.Scripts\Systems\GridManager.cs" />
     <Compile Include="Assets\02.Scripts\Systems\InputManager.cs" />
     <Compile Include="Assets\02.Scripts\Systems\ManagerHolder.cs" />
@@ -251,6 +251,7 @@
     <Compile Include="Assets\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
     <Compile Include="Assets\Terasurware\Classes\EntityTable.cs" />
+    <Compile Include="Assets\Terasurware\Classes\StageTable.cs" />
     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
     <None Include="Assets\AstarPathfindingProject\Plugins\Poly2Tri\Poly2TriLicense.txt" />
     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />

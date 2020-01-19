@@ -24,7 +24,7 @@ MonoBehaviour:
       SearchRange: 10
       AttackPower: 10
       AttackSpeed: 1
-    - ID: 100001
+    - ID: 2000
       EntityCategory: Slime
       EntityType: Unit
       HP: 100
